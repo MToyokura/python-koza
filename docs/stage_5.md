@@ -30,7 +30,9 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 3つともちゃんと機能するリスト型データです。 
 
 リスト型データでは以下のオペレータを使うことが可能です。 
+
 <table><tr><th> オペレータ </th><th> 意味 </th></tr><tr><td> + </td><td> リストとリストをくっつける </td></tr><tr><td> * </td><td> 要素を繰り返す </td></tr><tr><td> [ n ] </td><td> 左からn番目の要素を取り出す </td></tr><tr><td> [ -n ] </td><td> 右からn番目の要素を取り出す </td></tr><tr><td> [ n : m ] </td><td> n番目からm番目までの要素を取り出す </td></tr><tr><td> in, not in </td><td> ある要素がリストに含まれているかどうかを判定する </td></tr><tr><td> == </td><td> リスト同士が完全に一致するかどうかを判定する </td></tr></table>
+
 リスト型データにオペレータを使った例を見てみましょう。 
 
 <iframe  allowfullscreen="" frameborder="0" height="356" marginheight="0" marginwidth="0" src="https://trinket.io/embed/python3/6843eebc8e?runOption=run" width="100%"></iframe>
@@ -39,10 +41,19 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 買い物リスト = ['お米', 'カレーのルウ', '人参', '玉ねぎ', 'じゃがいも']
 
 print(買い物リスト + ['鶏もも肉', '板チョコ'])
+# ['お米', 'カレーのルウ', '人参', '玉ねぎ', 'じゃがいも', '鶏もも肉', '板チョコ']
+
 print(買い物リスト + ['鶏もも肉']*3)
+# ['お米', 'カレーのルウ', '人参', '玉ねぎ', 'じゃがいも', '鶏もも肉', '鶏もも肉', '鶏もも肉']
+
 print(買い物リスト[2])
+# 人参
+
 print(買い物リスト[1:4])
+# ['カレーのルウ', '人参', '玉ねぎ']
+
 print('プリン' in 買い物リスト)
+# False
 ```
 
 リスト型データの要素は、「=」を使って書き換えることが可能です。 
@@ -52,9 +63,11 @@ print('プリン' in 買い物リスト)
 ```
 買い物リスト = ['お米', 'カレーのルウ', '人参', '玉ねぎ', 'じゃがいも', '鶏もも肉']
 print(買い物リスト)
+# ['お米', 'カレーのルウ', '人参', '玉ねぎ', 'じゃがいも', '鶏もも肉']
 
 買い物リスト[5] = '豚小間切れ肉'
 print(買い物リスト)
+# ['お米', 'カレーのルウ', '人参', '玉ねぎ', 'じゃがいも', '豚小間切れ肉']
 ```
 
 上の例では、「買い物リスト」というリスト型データの6番目の要素である「鶏もも肉」を「豚小間切れ肉」に書き換えています。 
@@ -87,7 +100,7 @@ Pythonの開発者は、Pythonで扱えるそれぞれのデータ型で様々�
 mylist = [1, 2, 3, 4]
 
 mylist.append(5)
-print(mylist)
+print(mylist)  # [1, 2, 3, 4, 5]
 ```
 
 ### `insert()`メソッド 
@@ -106,7 +119,7 @@ print(mylist)
 mylist = [1, 2, 3, 4]
 
 mylist.insert(2, 'Hi')
-print(mylist)
+print(mylist)  # [1, 2, 'Hi', 3, 4]
 ```
 
 ### `pop()`メソッド 
@@ -119,8 +132,8 @@ print(mylist)
 mylist = [1, 2, 3, 4, 5]
 
 a = mylist.pop(2)
-print(mylist)
-print(a)
+print(mylist)  # [1, 2, 4, 5]
+print(a)  # 3
 ```
 
 ### `__len__()`メソッド 
@@ -132,8 +145,8 @@ print(a)
 ```
 a = [1, 2, 3, 4, 5]
 
-print(len(a))
-print(a.__len__())
+print(len(a))  # 5
+print(a.__len__())  # 5
 ```
 
 `__len__()`メソッドは、`len()`関数のようにリストの中の要素の数を数えてくれます。余談ですが、実は`len()`関数は、あるデータの`__len__()`メソッドを呼び出しているだけなので、`len()`は結局`__len__()`メソッドを行っているに過ぎません。`len()`関数がリスト型データ、文字列、辞書型データなど複数のデータ型で使うことができるのは、それぞれが同じく`__len__()`メソッドを持っているからなのです。 
@@ -148,5 +161,15 @@ print(a.__len__())
 mylist = []
 
 print(help(mylist))
+# Help on list object:
+#
+# class list(object)
+#  |  list() -> new empty list
+#  |  list(iterable) -> new list initialized from iterable's items
+#  |  
+# ...
+
 print(dir(mylist))
+# ['__add__', '__class__', '__contains__', '__delattr__', '__delitem__', '__dir__', 
+# ...
 ```

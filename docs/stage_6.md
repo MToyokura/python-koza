@@ -205,15 +205,15 @@ print(random.randint(1,10))
 import math
 
 
-print(math.exp(1)) # 自然対数 e の 1 乗
+print(math.exp(1))  # 自然対数 e の 1 乗
 
-print(math.log10(1000)) # 1000 の常用対数
+print(math.log10(1000))  # 1000 の常用対数
 
-print(math.sqrt(2)) # 2 のルート
+print(math.sqrt(2))  # 2 のルート
 
-print(math.pi) # π (これは関数ではなく定数)
+print(math.pi)  # π (これは関数ではなく定数)
 
-print(math.sin(math.pi/2)) # sin(90°)
+print(math.sin(math.pi/2))  # sin(90°)
 ```
 
 `math`モジュールには他にも様々な関数があります。気になる人は使ってみてください。 
