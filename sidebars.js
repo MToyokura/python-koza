@@ -5,4 +5,3 @@ module.exports = {
     補足資料: ['installing_python', 'trinket_and_idle'],
   },
 };
-
