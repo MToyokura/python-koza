@@ -1,7 +1,10 @@
 module.exports = {
   title: 'プログラミング初心者のためのPython講座',
+  // tagline: 'The tagline of my site',
   url: 'https://mtoyokura.github.io/',
   baseUrl: '/python-koza/',
+  onBrokenLinks: 'throw',
+  onBrokenMarkdownLinks: 'warn',
   favicon: 'img/python-logo.png',
   organizationName: 'MToyokura',
   projectName: 'python-koza',
@@ -23,10 +26,10 @@ module.exports = {
       '@docusaurus/preset-classic',
       {
         docs: {
-          routeBasePath: '',
+          routeBasePath: '/',
           sidebarPath: require.resolve('./sidebars.js'),
           editUrl:
-            'https://github.com/MToyokura/python-koza/tree/master/',
+          'https://github.com/MToyokura/python-koza/tree/master/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
