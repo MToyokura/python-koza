@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkpython_koza=self.webpackChunkpython_koza||[]).push([[195],{2841:function(t,n,e){e.r(n);var o=e(7294),u=e(6775),a=e(4996);n.default=function(){return o.createElement(u.l_,{to:(0,a.Z)("/introduction")})}}}]);
